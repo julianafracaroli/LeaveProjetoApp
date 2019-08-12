@@ -9,16 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+
+        <meta-data android:name="DATABASE" android:value="leave.db" />
+        <meta-data android:name="VERSION" android:value="1" />
+        <meta-data android:name="QUERY_LOG" android:value="true" />
+        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="com.example.aluno.leaveprojeto.models" />
+
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Main2Activity" />
+        <activity android:name=".CadastroActivity" />
         <activity android:name=".tela_selecao" />
-        <activity android:name=".vender_roupa"></activity>
+        <activity android:name=".vender_roupa" />
+        <activity android:name=".CompraActivity"></activity>
     </application>
 
 </manifest>

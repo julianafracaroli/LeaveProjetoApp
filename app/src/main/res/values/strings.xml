@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">LeaveProjeto</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_tela_comprar">telaComprarActivity</string>
+    <string name="title_activity_tela_compra">telaCompraActivity</string>
+    <string name="title_activity_tela_compras">telaComprasActivity</string>
+    <string name="title_activity_compra">CompraActivity</string>
 </resources>
