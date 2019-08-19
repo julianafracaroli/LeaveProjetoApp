@@ -23,7 +23,7 @@
         app:layout_constraintVertical_bias="0.121" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btVender"
         android:layout_width="266dp"
         android:layout_height="48dp"
         android:layout_marginBottom="8dp"
@@ -40,7 +40,7 @@
         app:layout_constraintVertical_bias="0.262" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btComprar"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -53,6 +53,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/btVender"
         app:layout_constraintVertical_bias="0.188" />
 </android.support.constraint.ConstraintLayout>
