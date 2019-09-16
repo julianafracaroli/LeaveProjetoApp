@@ -6,6 +6,8 @@ import android.os.Bundle;
 import com.example.aluno.leaveprojeto.models.User;
 import com.orm.SugarContext;
 
+
+
 public class CadastroActivity extends AppCompatActivity {
 
     @Override
@@ -14,10 +16,7 @@ public class CadastroActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tela_cadastro);
 
 
-        //User user = new User("khdsakdsa", "daklshdsalk", "ldsajldsaj");
-        //SugarContext.init(CadastroActivity.this);
-        //user.save();
-        //SugarContext.terminate();
+
 
 
     }
