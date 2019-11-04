@@ -10,7 +10,7 @@ public class Pessoa extends SugarRecord{
 
     private String nome;
     private String email;
-
+    private String senha;
 
     public String getNome() {
         return nome;
@@ -27,6 +27,9 @@ public class Pessoa extends SugarRecord{
     public void setEmail(String email) {
         this.email = email;
     }
+
+
+
 
     public Pessoa() {
 

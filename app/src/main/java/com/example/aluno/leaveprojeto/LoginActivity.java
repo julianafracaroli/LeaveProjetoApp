@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.aluno.leaveprojeto.models.User;
+import com.orm.SugarContext;
 import com.orm.query.Condition;
 import com.orm.query.Select;
 
@@ -52,7 +53,23 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
 
                 } else {
-                    User user = (Select.from(User.class).where(Condition.prop("login").eq(nome)).and(Condition.prop("senha").eq(senha)).list()).get(0);
+                    try {
+                        User user = (Select.from(User.class).where(Condition.prop("login").eq(nome)).and(Condition.prop("senha").eq(senha)).list()).get(0);
+                        SugarContext.init(LoginActivity.this);
+                        Toast.makeText(LoginActivity.this, "Logado com Sucesso", Toast.LENGTH_SHORT).show();
+                        user = (User.find(User.class, "nome = ?", nome).get(0));
+                        SugarContext.terminate();
+
+                        if(!user.getSenha().equals(senha)){
+                            Toast.makeText(LoginActivity.this, "Senha Incorreta", Toast.LENGTH_SHORT);
+                        } else {
+                            startActivity(new Intent(LoginActivity.this, tela_selecao.class));
+                        }
+                    } catch (Exception e){
+                        System.err.println("<====================================>");
+                        e.printStackTrace();
+                        System.err.println("<====================================>");
+                    }
                 }
 
 
