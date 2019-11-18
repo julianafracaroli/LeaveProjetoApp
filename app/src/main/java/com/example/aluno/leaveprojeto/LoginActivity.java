@@ -47,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String nome = etNome.getText().toString().trim();
+                System.out.println(nome);
                 String senha = etSenha.getText().toString().trim();
                 if (nome.isEmpty() || senha.isEmpty()) {
                     Toast.makeText(LoginActivity.this, "Preencha todos os campos.",
@@ -54,21 +55,17 @@ public class LoginActivity extends AppCompatActivity {
 
                 } else {
                     try {
-                        User user = (Select.from(User.class).where(Condition.prop("login").eq(nome)).and(Condition.prop("senha").eq(senha)).list()).get(0);
                         SugarContext.init(LoginActivity.this);
+                        User user = (Select.from(User.class).where(Condition.prop("nome").eq(nome)).and(Condition.prop("senha").eq(senha)).list()).get(0);
                         Toast.makeText(LoginActivity.this, "Logado com Sucesso", Toast.LENGTH_SHORT).show();
-                        user = (User.find(User.class, "nome = ?", nome).get(0));
                         SugarContext.terminate();
-
-                        if(!user.getSenha().equals(senha)){
-                            Toast.makeText(LoginActivity.this, "Senha Incorreta", Toast.LENGTH_SHORT);
-                        } else {
-                            startActivity(new Intent(LoginActivity.this, tela_selecao.class));
-                        }
+                        startActivity(new Intent(LoginActivity.this, tela_selecao.class));
                     } catch (Exception e){
                         System.err.println("<====================================>");
                         e.printStackTrace();
                         System.err.println("<====================================>");
+                        Toast.makeText(LoginActivity.this, "Login ou senha incorretos", Toast.LENGTH_SHORT).show();
+
                     }
                 }
 
