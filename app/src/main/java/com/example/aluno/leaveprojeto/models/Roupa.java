@@ -30,5 +30,11 @@ public class Roupa extends SugarRecord {
 
     public void setEtTamRoupa(String etTamRoupa) {
         this.etTamRoupa = etTamRoupa;
+
+    }
+    public Roupa (String etTamRoupa, String etTipoRoupa) {
+        this.etTamRoupa = etTamRoupa;
+        this.etTipoRoupa = etTipoRoupa;
     }
 }
+
