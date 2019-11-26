@@ -35,14 +35,6 @@
         <activity android:name=".vender_roupa" />
         <activity android:name=".CompraActivity" />
         <activity android:name=".listaActivity" />
-        <activity
-            android:name=".alterarActivity"
-            android:label="@string/title_activity_alterar"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".activity_alterar"
-            android:label="@string/title_activity_alterar"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity_mudar"></activity>
     </application>
 
