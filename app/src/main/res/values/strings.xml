@@ -5,4 +5,5 @@
     <string name="title_activity_tela_compra">telaCompraActivity</string>
     <string name="title_activity_tela_compras">telaComprasActivity</string>
     <string name="title_activity_compra">CompraActivity</string>
+    <string name="title_activity_alterar">alterarActivity</string>
 </resources>

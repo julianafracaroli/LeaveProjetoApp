@@ -34,18 +34,5 @@ public class tela_selecao extends AppCompatActivity {
 
             }
         });
-excluirUser.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        //
-    }
-});
-alterarUser.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        //
-    }
-});
-
     }
 }
