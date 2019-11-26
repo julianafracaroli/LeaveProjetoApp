@@ -35,7 +35,8 @@
         <activity android:name=".vender_roupa" />
         <activity android:name=".CompraActivity" />
         <activity android:name=".listaActivity" />
-        <activity android:name=".activity_mudar"></activity>
+        <activity android:name=".activity_mudar" />
+        <activity android:name=".alterar_activity"></activity>
     </application>
 
 </manifest>

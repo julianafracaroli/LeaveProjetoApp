@@ -14,6 +14,7 @@ import java.util.List;
 public class listaActivity extends AppCompatActivity {
     private List<Roupa> roupas;
     private ListView listView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,5 +35,4 @@ public class listaActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(listaActivity.this,android.R.layout.simple_list_item_1, listaRoupa);
         listView.setAdapter(adapter);
     }
-
 }
