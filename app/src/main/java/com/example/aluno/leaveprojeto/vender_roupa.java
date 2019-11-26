@@ -12,6 +12,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.example.aluno.leaveprojeto.models.Roupa;
+import com.orm.SugarContext;
 
 
 public class vender_roupa extends AppCompatActivity {
@@ -21,7 +25,6 @@ public class vender_roupa extends AppCompatActivity {
     private Button btSalvar;
     private ImageView imgCamera;
     private Button btListar;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,7 +45,37 @@ public class vender_roupa extends AppCompatActivity {
             }
 
         });
-        //return imgCamera();
+
+        btSalvar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                String tamRoupa = etTamRoupa.getText().toString().trim();
+                String tipoRoupa = etTipoRoupa.getText().toString().trim();
+
+                if (tamRoupa.isEmpty() || tipoRoupa.isEmpty()){
+                    Toast.makeText(vender_roupa.this, "Preencha todos os campos.",
+                            Toast.LENGTH_SHORT).show();
+                }else {
+                    Roupa roupa = new Roupa(tamRoupa, tipoRoupa);
+
+                    try {
+                        SugarContext.init(vender_roupa.this);
+                        roupa.save();
+                        SugarContext.terminate();
+                        Toast.makeText(vender_roupa.this, "Salvo com sucesso.", Toast.LENGTH_SHORT).show();
+                        limparCampo();
+                        finish();
+                    }
+                    catch (Exception e) {
+                        System.out.println("<========================================>");
+                        e.printStackTrace();
+                        System.out.println("<========================================>");
+                    }
+                }
+
+            }
+        });
 
         btListar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,4 +100,8 @@ private void tirarFoto(){
     super.onActivityResult(requestCode, resultCode, data);
 }
 
+    private void  limparCampo() {
+        etTamRoupa.setText("");
+        etTipoRoupa.setText("");
+    }
 }

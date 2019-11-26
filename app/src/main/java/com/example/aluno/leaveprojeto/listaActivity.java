@@ -2,6 +2,7 @@ package com.example.aluno.leaveprojeto;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 
 import com.example.aluno.leaveprojeto.models.Roupa;
 import com.orm.query.Select;
@@ -24,6 +25,8 @@ public class listaActivity extends AppCompatActivity {
         for (int cont = 0; cont < roupas.size();cont++){
                listaRoupa[cont] = roupas.get(cont).getEtTamRoupa() + " - " + roupas.get(cont).getEtTipoRoupa();
         }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(listaActivity.this,android.R.layout.simple_list_item_1);
     }
 
 }
