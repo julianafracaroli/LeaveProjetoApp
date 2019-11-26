@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.aluno.leaveprojeto.models.Roupa;
+import com.orm.SugarContext;
 import com.orm.query.Select;
 
 import java.util.List;
@@ -20,7 +21,9 @@ public class listaActivity extends AppCompatActivity {
 
         listView = findViewById(R.id.listView);
 
+        SugarContext.init(listaActivity.this);
         roupas = Select.from(Roupa.class).list();
+        SugarContext.terminate();
 
         String listaRoupa[] = new String[roupas.size()];
 
@@ -29,6 +32,7 @@ public class listaActivity extends AppCompatActivity {
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(listaActivity.this,android.R.layout.simple_list_item_1, listaRoupa);
+        listView.setAdapter(adapter);
     }
 
 }

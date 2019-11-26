@@ -10,6 +10,8 @@ public class tela_selecao extends AppCompatActivity {
     private Button btVender;
     private Button btComprar;
     private Button btVEnder;
+    private Button excluirUser;
+    private Button alterarUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +34,18 @@ public class tela_selecao extends AppCompatActivity {
 
             }
         });
-
-
+excluirUser.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        //
+    }
+});
+alterarUser.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        //
+    }
+});
 
     }
 }
