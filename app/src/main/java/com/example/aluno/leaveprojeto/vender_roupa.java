@@ -20,7 +20,7 @@ public class vender_roupa extends AppCompatActivity {
     private EditText etTamRoupa;
     private Button btSalvar;
     private ImageView imgCamera;
-
+    private Button btListar;
 
 
     @Override
@@ -34,7 +34,7 @@ public class vender_roupa extends AppCompatActivity {
         btSalvar = findViewById(R.id.btSalvar);
         etTamRoupa = findViewById(R.id.etTamRoupa);
         etTipoRoupa = findViewById(R.id.etTipoRoupa);
-
+        btListar = findViewById(R.id.btListar);
         cam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,6 +43,13 @@ public class vender_roupa extends AppCompatActivity {
 
         });
         //return imgCamera();
+
+        btListar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(vender_roupa.this, listaActivity.class));
+            }
+        });
     }
 private void tirarFoto(){
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -58,6 +65,6 @@ private void tirarFoto(){
         imgCamera.setImageBitmap(imagem);
     }
     super.onActivityResult(requestCode, resultCode, data);
-
 }
+
 }
