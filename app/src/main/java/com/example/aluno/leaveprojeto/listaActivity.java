@@ -3,6 +3,7 @@ package com.example.aluno.leaveprojeto;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.example.aluno.leaveprojeto.models.Roupa;
 import com.orm.query.Select;
@@ -11,12 +12,13 @@ import java.util.List;
 
 public class listaActivity extends AppCompatActivity {
     private List<Roupa> roupas;
-
-
+    private ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista);
+
+        listView = findViewById(R.id.listView);
 
         roupas = Select.from(Roupa.class).list();
 
@@ -26,7 +28,7 @@ public class listaActivity extends AppCompatActivity {
                listaRoupa[cont] = roupas.get(cont).getEtTamRoupa() + " - " + roupas.get(cont).getEtTipoRoupa();
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(listaActivity.this,android.R.layout.simple_list_item_1);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(listaActivity.this,android.R.layout.simple_list_item_1, listaRoupa);
     }
 
 }
