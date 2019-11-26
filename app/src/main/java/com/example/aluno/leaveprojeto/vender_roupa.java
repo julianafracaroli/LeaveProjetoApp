@@ -1,5 +1,8 @@
 package com.example.aluno.leaveprojeto;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,11 +38,26 @@ public class vender_roupa extends AppCompatActivity {
         cam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //tirarfoto();
+                tirarFoto();
             }
 
         });
         //return imgCamera();
     }
+private void tirarFoto(){
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent,1);
 
+}
+@Override
+    public void onActivityResult (int requestCode,int resultCode, Intent data){
+
+    if (requestCode==1){
+        Bundle extra = data.getExtras();
+        Bitmap imagem = (Bitmap) extra.get("data");
+        imgCamera.setImageBitmap(imagem);
+    }
+    super.onActivityResult(requestCode, resultCode, data);
+
+}
 }
