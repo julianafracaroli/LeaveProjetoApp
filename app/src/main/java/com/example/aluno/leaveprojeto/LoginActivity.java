@@ -59,7 +59,12 @@ public class LoginActivity extends AppCompatActivity {
                         User user = (Select.from(User.class).where(Condition.prop("nome").eq(nome)).and(Condition.prop("senha").eq(senha)).list()).get(0);
                         Toast.makeText(LoginActivity.this, "Logado com Sucesso", Toast.LENGTH_SHORT).show();
                         SugarContext.terminate();
-                        startActivity(new Intent(LoginActivity.this, tela_selecao.class));
+                        Intent intent = new Intent(LoginActivity.this,tela_selecao.class);
+                        Bundle b = new Bundle();
+                        b.putLong("id", user.getId());
+                        intent.putExtras(b);
+
+                        startActivity(intent);
                     } catch (Exception e){
                         System.err.println("<====================================>");
                         e.printStackTrace();
